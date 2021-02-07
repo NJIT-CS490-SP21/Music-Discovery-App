@@ -35,9 +35,16 @@ def index():
         "market" : "US"
     })
     data = response.json()
-    rand_song = data["tracks"][0] # fix this
     
-    return render_template("index.html", len = len(favShows), favShows = favShows)
+    #extract the relevant info from the resulting JSON
+    song = data["tracks"][random.randint(0, len(data["tracks"])-1)]
+    song_name = song["name"]
+    artist = song["album"]["artists"][0]["name"]
+    song_image=song["album"]["images"][0]["url"]
+    preview_url=song["preview_url"]
+    
+    
+    return render_template("index.html", song_name=song_name, artist=artist, song_image=song_image, preview_url=preview_url)
 
 
 app.run(
