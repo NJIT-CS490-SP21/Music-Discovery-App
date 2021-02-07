@@ -9,7 +9,6 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/')
 def index():
     # Get access token
     load_dotenv(find_dotenv())
