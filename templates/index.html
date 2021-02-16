@@ -4,15 +4,16 @@
 <head> 
     <meta charset="utf-8">
     <title>Music Discovery App</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
 </head> 
 <body> 
-
+<div class="main_app">
     {{song_name}}<br>
     by {{artist}}<br>
     <img src={{song_image}} alt="Song image"><br>
     <video controls>
         <source src={{preview_url}} type="audio/mpeg">
     </video>
-
+</div>
 </body> 
 </html> 

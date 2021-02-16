@@ -1,0 +1,17 @@
+body {
+    background-color: #f3e5f5;
+    font-family: 'Courier New', monospace;
+}
+
+.main_app {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    
+    margin: auto;
+    width: 50%;
+}
+
+img {
+    border-radius: 8%;
+}
