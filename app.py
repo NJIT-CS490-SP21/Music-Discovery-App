@@ -25,8 +25,8 @@ def index():
     
     
     # Choose an artist and fetch their top tracks
-    fav_artists = ["5xeBMeW0YzWIXSVzAxhM8O", "1OKOTYGoCE2buxTYMegJp7", "72rZmJbRFSY6IFJAysfOdr"]
-    id = fav_artists[random.randint(0,2)]
+    fav_artists = ["5xeBMeW0YzWIXSVzAxhM8O", "1OKOTYGoCE2buxTYMegJp7", "72rZmJbRFSY6IFJAysfOdr", "4Mt6w4tDGiPgV5q6JWPlrI", "5rx7lpIuya41ws2oWXRiGu", "7kAZYW5e5hQHYGQ0XHYhns"]
+    id = fav_artists[random.randint(0,len(fav_artists) - 1)]
     BASE_URL = "https://api.spotify.com/v1/artists/" + id + "/top-tracks"
     
     response = requests.get(BASE_URL, params={
