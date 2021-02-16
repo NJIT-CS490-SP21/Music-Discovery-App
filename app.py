@@ -25,7 +25,7 @@ def index():
     
     
     # Choose an artist and fetch their top tracks
-    fav_artists = ["5xeBMeW0YzWIXSVzAxhM8O", "1OKOTYGoCE2buxTYMegJp7", "72rZmJbRFSY6IFJAysfOdr", "4Mt6w4tDGiPgV5q6JWPlrI", "5rx7lpIuya41ws2oWXRiGu", "7kAZYW5e5hQHYGQ0XHYhns"]
+    fav_artists = ["5xeBMeW0YzWIXSVzAxhM8O", "1OKOTYGoCE2buxTYMegJp7", "4Mt6w4tDGiPgV5q6JWPlrI", "5rx7lpIuya41ws2oWXRiGu"]
     id = fav_artists[random.randint(0,len(fav_artists) - 1)]
     BASE_URL = "https://api.spotify.com/v1/artists/" + id + "/top-tracks"
     
@@ -42,8 +42,20 @@ def index():
     song_image=song["album"]["images"][0]["url"]
     preview_url=song["preview_url"]
     
+    #Genius API
+    GENIUS_URL = 'https://api.genius.com/search'
+    genius_response = requests.get(GENIUS_URL, params = {
+        'q' : song_name
+        }, 
+        headers = {
+        'Authorization' : 'Bearer ' + os.getenv('CLIENT_ACCESS_TOKEN')
+        }
+    )
     
-    return render_template("index.html", song_name=song_name, artist=artist, song_image=song_image, preview_url=preview_url)
+    genius_data = genius_response.json()
+    genius_URL = genius_data['response']['hits'][0]['result']['url']
+    
+    return render_template("index.html", song_name=song_name, artist=artist, song_image=song_image, preview_url=preview_url, genius_URL=genius_URL)
 
 
 app.run(
