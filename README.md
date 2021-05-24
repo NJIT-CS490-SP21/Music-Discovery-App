@@ -1,8 +1,10 @@
 # Music Discovery App
 Project 1 for cs490 at NJIT
 Made by Samuel Muller, ID: scm42
+See the app at http://tranquil-brook-43836.herokuapp.com/
 
-## How to run this app:
+
+## How to deploy this app for yourself:
   * Sign up at https://developer.spotify.com/ and follow the steps listed there to create an app
   * Sign up to use the Genius API and get a client access token
   * Clone this repository
