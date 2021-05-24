@@ -1,6 +1,6 @@
 # Music Discovery App
-Project 1 for cs490 at NJIT
-Made by Samuel Muller, ID: scm42
+Project 1 for cs490 at NJIT  
+Made by Samuel Muller, ID: scm42  
 See the app at http://tranquil-brook-43836.herokuapp.com/
 
 
